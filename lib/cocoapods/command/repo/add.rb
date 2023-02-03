@@ -84,8 +84,8 @@ module Pod
           config.with_changes(changes) do
             Dir.chdir(config.repos_dir) do
               command = ['clone', @url]
-              command << '--progress' if @progress
-              command << '--depth=1' if @progress
+              command << '--progress'
+              command << '--depth=1'
               command << '--' << @name
               git!(command)
             end
