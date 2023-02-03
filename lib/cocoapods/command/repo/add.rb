@@ -83,6 +83,7 @@ module Pod
             Dir.chdir(config.repos_dir) do
               command = ['clone', @url]
               command << '--progress' if @progress
+              command << '--depth=1'
               command << '--' << @name
               git!(command)
             end
