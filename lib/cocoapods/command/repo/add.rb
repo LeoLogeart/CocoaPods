@@ -47,6 +47,8 @@ module Pod
             create_repos_dir
             clone_repo
             checkout_branch
+          end
+          UI.section("Verifying compatibility") do
             config.sources_manager.sources([dir.basename.to_s]).each(&:verify_compatibility!)
           end
         end
